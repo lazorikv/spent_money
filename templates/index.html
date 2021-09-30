@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% if latest_list %}
+    {% for question in latest_list %}
+        <p>{{ question.spent }} грн потрачено | {{ question.get_money }} грн получено | Дата: {{ question.date_stat}}</p>
+    {% endfor %}
+{% else %}
+    <p>No report are available.</p>
+{% endif %}
+{% endblock %}
